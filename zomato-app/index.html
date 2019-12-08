@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <!--<link href="Content/Styles/bootstrap.min.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <link href="Content/Styles/nouislider.min.css" rel="stylesheet" />
+    <link href="Content/Styles/style.css" rel="stylesheet" />
+    
+
+    <script src="Content/Script/script.js"></script>
+    
+
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row filter">
+            <div class="col-lg-8">
+                <div class="row">
+                    <div class="category-container">
+                        <p class="title">
+                            CATEGORY
+                        </p>
+                    </div>
+                    <div class="cuisine-container">
+                       <p class="title">
+                            CUISINE
+                        </p>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <p class="title ">
+                    rating
+                 </p>
+                 <div id="RatingSlider"></div>
+                 <p class="title ">
+                     cost
+                 </p>
+                 <div id="Cost"></div>
+                
+
+            </div>
+        </div>
+        <div class="row main">
+            <aside class="col-lg-3 bg-aside">
+                    <p class="title error-handling">
+                            RESULTS
+                        </p> 
+                <ul class="restaurent-list">
+                    
+                    
+                </ul>
+
+
+
+            </aside>
+            <content class="col-lg-9">
+                <div class="row">
+                    <div class="col-md-6 img-container">
+                        <img src="" class="restaurent-img"/>
+                        <div id="loading">
+                            <img id="loading-image" src="Content/Images/ajax-loader.gif" alt="Loading..." />
+                          </div>
+                    </div>
+                    <div class="col-md-6 description">
+                        <h1 class="resturant-name">
+                            
+                        </h1>
+                        <p class="restaurent-address"></p>
+                        <div class="features">
+                            <span>
+                               <i class="close-mark">✘</i> 
+                                No Booking
+                            </span>
+                            <span>
+                               <i class="check-mark">✔</i>
+                                Delivery Available
+                            </span>
+                        </div>
+                       
+                        <div class="details">
+                            <p class="title">CUSINES</p>
+                            <span class="restaurent-CUSINES"></span>
+                        </div>
+                        <div class="details">
+                            <p class="title">PHONE NUMBER</p>
+                            <span class="restaurent-phone_numbers"></span>
+                        </div>
+                        <div class="details">
+                            <p class="title">OPENING HOURS</p>
+                            <span>Today 6:30AM to 4PM</span>
+                            <span class="status">OPEN NOW</span>
+                        </div>
+                    </div>
+                </div>
+            </content>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="Content/Script/nouislider.js"></script>
+    <script src="Content/Script/script.js"></script>
+    <script>
+        //Range Slider
+  var ratingSlider = document.getElementById('RatingSlider');
+
+  noUiSlider.create(ratingSlider, {
+      start: [1, 4],
+      snap: true,
+      pips: { mode: 'count', values: 2 },
+      connect: true,
+      range: {
+          'min': 0,
+          '20%': 1,
+          '40%': 2,
+          '60%': 3,
+          '80%': 4,
+          'max': 5
+      }
+  });
+
+  var costSlider = document.getElementById('Cost');
+
+  noUiSlider.create(costSlider, {
+      start: [1000, 4000],
+      connect: true,
+      pips: { mode: 'count', values: 2 },
+      range: {
+          'min':1,
+          'max': 4000
+      }
+  });
+    </script>
+</body>
+</html>
